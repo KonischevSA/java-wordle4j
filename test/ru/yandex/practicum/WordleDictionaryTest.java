@@ -10,14 +10,13 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WordleDictionaryTest {
-    private static Logger logger;
     private static WordleDictionaryLoader wordleDictionaryLoader;
     private String goodFile_1 = "test\\ru\\yandex\\practicum\\words_ru_1_good.txt";
     private String goodFile_10 = "test\\ru\\yandex\\practicum\\words_ru_10_good.txt";
 
     @BeforeAll
     public static void beforeAll() {
-        logger = new Logger("tests_log.txt", false);
+        Logger logger = new Logger("tests_log.txt", false);
         wordleDictionaryLoader = new WordleDictionaryLoader(logger);
     }
 

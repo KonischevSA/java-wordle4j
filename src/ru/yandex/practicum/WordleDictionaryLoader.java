@@ -21,7 +21,7 @@ public class WordleDictionaryLoader {
         ArrayList<String> words = new ArrayList<>();
         int totalWordsChecked = 0;
 
-        try (BufferedReader br = new BufferedReader(new FileReader(fileName));) {
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
 
             String word;
             while (br.ready()) {

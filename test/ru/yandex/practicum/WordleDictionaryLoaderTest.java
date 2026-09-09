@@ -10,7 +10,6 @@ import java.io.IOException;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class WordleDictionaryLoaderTest {
-    private static Logger logger;
     private static WordleDictionaryLoader wordleDictionaryLoader;
     private String emptyFile = "test\\ru\\yandex\\practicum\\words_ru_empty.txt";
     private String badFile_1 = "test\\ru\\yandex\\practicum\\words_ru_1_bad.txt";
@@ -21,7 +20,7 @@ public class WordleDictionaryLoaderTest {
 
     @BeforeAll
     public static void beforeAll() {
-        logger = new Logger("tests_log.txt", false);
+        Logger logger = new Logger("tests_log.txt", false);
         wordleDictionaryLoader = new WordleDictionaryLoader(logger);
     }
 
