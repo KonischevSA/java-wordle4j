@@ -7,110 +7,92 @@ import static org.junit.jupiter.api.Assertions.*;
 class ValidatorTest {
 
     @Test
-    public void test_emptyStringWithZeroValidLengthShouldReturnFalse()
-    {
+    public void test_emptyStringWithZeroValidLengthShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("", 0));
     }
 
     @Test
-    public void test_emptyStringNegativeValidLengthShouldReturnFalse()
-    {
+    public void test_emptyStringNegativeValidLengthShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("", -1));
     }
 
     @Test
-    public void test_emptyStringPositiveValidLengthShouldReturnFalse()
-    {
+    public void test_emptyStringPositiveValidLengthShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("", 1));
     }
 
     @Test
-    public void test_nullStringWithZeroValidLengthShouldReturnFalse()
-    {
+    public void test_nullStringWithZeroValidLengthShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("", 0));
     }
 
     @Test
-    public void test_nullStringNegativeValidLengthShouldReturnFalse()
-    {
+    public void test_nullStringNegativeValidLengthShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("", -1));
     }
 
     @Test
-    public void test_nullStringPositiveValidLengthShouldReturnFalse()
-    {
+    public void test_nullStringPositiveValidLengthShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("", 1));
     }
 
     @Test
-    public void test_WordLengthLessThenValidLengthShouldReturnFalse()
-    {
+    public void test_WordLengthLessThenValidLengthShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("слово", 6));
     }
 
     @Test
-    public void test_WordLengthMoreThenValidLengthShouldReturnFalse()
-    {
+    public void test_WordLengthMoreThenValidLengthShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("слово", 4));
     }
 
     @Test
-    public void test_5SpacesWordShouldReturnFalse()
-    {
+    public void test_5SpacesWordShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("     ", 5));
     }
 
     @Test
-    public void test_WordWithSpacesShouldReturnFalse()
-    {
+    public void test_WordWithSpacesShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("сло о", 5));
     }
 
     @Test
-    public void test_WordWithNumericShouldReturnFalse()
-    {
+    public void test_WordWithNumericShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("сло1о", 5));
     }
 
     @Test
-    public void test_FullNumericWordShouldReturnFalse()
-    {
+    public void test_FullNumericWordShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("12345", 5));
     }
 
     @Test
-    public void test_WordWithEnglishLettersShouldReturnFalse()
-    {
+    public void test_WordWithEnglishLettersShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("слоvо", 5));
     }
 
     @Test
-    public void test_FullEnglishWordShouldReturnFalse()
-    {
+    public void test_FullEnglishWordShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("words", 5));
     }
 
     @Test
-    public void test_FullEnglishUpperCaseWordShouldReturnFalse()
-    {
+    public void test_FullEnglishUpperCaseWordShouldReturnFalse() {
         assertFalse(WordsValidator.isValid("WORDS", 5));
     }
 
     @Test
-    public void test_FullCyrillicWordShouldReturnTrue()
-    {
+    public void test_FullCyrillicWordShouldReturnTrue() {
         assertTrue(WordsValidator.isValid("слово", 5));
     }
 
     @Test
-    public void test_FullCyrillicUpperCaseWordShouldReturnTrue()
-    {
+    public void test_FullCyrillicUpperCaseWordShouldReturnTrue() {
         assertTrue(WordsValidator.isValid("СЛОВО", 5));
     }
 
     @Test
-    public void test_FullCyrillicSomeUpperCaseWordShouldReturnTrue()
-    {
+    public void test_FullCyrillicSomeUpperCaseWordShouldReturnTrue() {
         assertTrue(WordsValidator.isValid("СлОвО", 5));
     }
 }

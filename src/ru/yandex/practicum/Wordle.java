@@ -18,7 +18,7 @@ public class Wordle {
     public static void main(String[] args) {
         try {
             refreshLog();
-            logger = new Logger(logFile,true);
+            logger = new Logger(logFile, true);
 
             logger.writeLog("Подготовка к игре.");
 

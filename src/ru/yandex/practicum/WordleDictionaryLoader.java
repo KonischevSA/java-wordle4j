@@ -34,16 +34,13 @@ public class WordleDictionaryLoader {
             }
             logger.writeLog("Словарь загружен. Обработано слов - " + totalWordsChecked + ", добавлено в игру - " + words.size() + ".");
 
-            if(words.isEmpty())
-            {
+            if (words.isEmpty()) {
                 throw new EmptyWordListException("В словаре нет подходящих для игры слов.");
             }
 
         } catch (IOException e) {
             throw new IOException("Не удалось загрузить словарь для игры.");
-        }
-        catch (EmptyWordListException e)
-        {
+        } catch (EmptyWordListException e) {
             throw e;
         }
 
