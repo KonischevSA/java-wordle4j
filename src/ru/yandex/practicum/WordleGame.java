@@ -174,6 +174,10 @@ public class WordleGame {
     public String makeWordMask(String word) {
         String[] mask = new String[GAME_WORD_LENGTH];
         badLetters.clear();
+        /*
+        Список "плохих" букв очищается, т.к. на шаге actualHelpList() из вспомогательного множества helpList подходящих слов
+        удаляются все слова, содержащие эти буквы. Повторно они уже не смогут выпасть.
+        */
 
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) == answer.charAt(i)) {
