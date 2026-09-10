@@ -80,8 +80,7 @@ public class WordleGame {
             System.out.println(makeWordMask(playersWord));
 
             steps++;
-        }
-        while (steps <= TOTAL_GAME_ROUNDS);
+        } while (steps <= TOTAL_GAME_ROUNDS);
 
         System.out.println("К сожалению, вы не угадали. Было загадано слово \"" + answer + "\"");
         logger.writeLog("Игра закончена, слово не угадано.");
@@ -99,8 +98,7 @@ public class WordleGame {
                 newWord = generateNewWord();
                 System.out.println(newWord);
             }
-        }
-        while (!checkNewWord(newWord));
+        } while (!checkNewWord(newWord));
 
         newWord = newWord.toLowerCase().replace("ё", "е");
         usedWords.add(newWord);
