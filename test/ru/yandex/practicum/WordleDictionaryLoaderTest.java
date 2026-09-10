@@ -11,12 +11,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class WordleDictionaryLoaderTest {
     private static WordleDictionaryLoader wordleDictionaryLoader;
-    private String emptyFile = "test\\ru\\yandex\\practicum\\words_ru_empty.txt";
-    private String badFile_1 = "test\\ru\\yandex\\practicum\\words_ru_1_bad.txt";
-    private String badFile_10 = "test\\ru\\yandex\\practicum\\words_ru_10_bad.txt";
-    private String goodFile_1 = "test\\ru\\yandex\\practicum\\words_ru_1_good.txt";
-    private String goodFile_10 = "test\\ru\\yandex\\practicum\\words_ru_10_good.txt";
-    private String noSuchFile = "test\\ru\\yandex\\practicum\\no_such_file.txt";
+    private String emptyFile = "test/ru/yandex/practicum/words_ru_empty.txt";
+    private String badFile_1 = "test/ru/yandex/practicum/words_ru_1_bad.txt";
+    private String badFile_10 = "test/ru/yandex/practicum/words_ru_10_bad.txt";
+    private String goodFile_1 = "test/ru/yandex/practicum/words_ru_1_good.txt";
+    private String goodFile_10 = "test/ru/yandex/practicum/words_ru_10_good.txt";
+    private String noSuchFile = "test/ru/yandex/practicum/no_such_file.txt";
 
     @BeforeAll
     public static void beforeAll() {
