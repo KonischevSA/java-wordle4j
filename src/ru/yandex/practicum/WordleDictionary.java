@@ -1,14 +1,24 @@
 package ru.yandex.practicum;
 
-import java.util.List;
+import ru.yandex.practicum.log.*;
 
-/*
-этот класс содержит в себе список слов List<String>
-    его методы похожи на методы списка, но учитывают особенности игры
-    также этот класс может содержать рутинные функции по сравнению слов, букв и т.д.
- */
+import java.util.List;
+import java.util.Random;
+
 public class WordleDictionary {
 
     private List<String> words;
+    private Random rnd = new Random();
 
+    public WordleDictionary(List<String> words) {
+        this.words = words;
+    }
+
+    public String getRandomWord() {
+        return words.get(rnd.nextInt(0, words.size()));
+    }
+
+    public List<String> getWords() {
+        return words;
+    }
 }
