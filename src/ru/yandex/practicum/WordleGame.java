@@ -28,7 +28,6 @@ public class WordleGame {
     private HashSet<Character> badLetters = new HashSet<>();
     private HashSet<Character> goodLetters = new HashSet<>();
     private char[] fullWordMask = new char[GAME_WORD_LENGTH];
-    private boolean someLetterGuessed = false;
     private Random rnd = new Random();
 
     Scanner scanner;
@@ -127,9 +126,8 @@ public class WordleGame {
     private String generateNewWord() throws EmptyWordListException {
         String newWord;
 
-        if (someLetterGuessed) {
-            actualHelpList();
-        }
+        actualHelpList();
+
         newWord = helpList.toArray()[(rnd.nextInt(0, helpList.size()))].toString();
 
         return newWord;
@@ -183,12 +181,10 @@ public class WordleGame {
             if (word.charAt(i) == answer.charAt(i)) {
                 mask[i] = "+";
                 fullWordMask[i] = word.charAt(i);
-                someLetterGuessed = true;
                 goodLetters.add(word.charAt(i));
             } else if (answer.indexOf(word.charAt(i)) >= 0) {
                 mask[i] = "^";
                 goodLetters.add(word.charAt(i));
-                someLetterGuessed = true;
             } else {
                 mask[i] = "-";
                 badLetters.add(word.charAt(i));
@@ -206,7 +202,6 @@ public class WordleGame {
         usedWords.clear();
         badLetters.clear();
         goodLetters.clear();
-        someLetterGuessed = false;
 
         Arrays.fill(fullWordMask, '*');
     }
